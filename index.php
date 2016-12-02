@@ -13,21 +13,21 @@
 </head>
 
 <body >
-  <div id="background-div">
-  <img src="image.jpg" />
-  </div>
-  <div class="container-head">
-    <div class="container-logo">
-      <img src="logo.png" />
+    <div id="background-div">
+        <img src="image/image.jpg" />
     </div>
-    <div class="container-header">
-      <hr />
-      <h1>Come With Us </h1>
-      <hr />
+    <div class="container-head">
+        <div class="container-logo">
+          <img src="image/logo.png" />
+        </div>
+        <div class="container-header">
+          <hr />
+          <h1>Come With Us </h1>
+          <hr />
+        </div>
     </div>
-  </div>
   <div class="container-center">
-    <h1>Nothing is born into this world without labor.</h1>
+       <h1>Nothing is born into this world without labor.</h1>
   </div>
   <div class="form">
       <ul class="tab-group">
@@ -39,21 +39,21 @@
           <h1>Welcome Back!</h1>
           <div class="field-wrap">
             <label>
-              Email Address<span class="req">*</span>
+              Email Address<span class="req" >*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="email"required id="credentials" class="signInField" autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password"required id="password" class="signInField" autocomplete="off"/>
           </div>
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
           
-          <button class="button button-block"/>Log In</button>
+          <button type="submit" class="button button-block" id="signInButton" />Log In</button>
           
         
         </div>
@@ -63,16 +63,16 @@
           <div class="top-row">
             <div class="field-wrap">
               <label>
-                First Name<span class="req">*</span>
+                User Name<span class="req">*</span>
               </label>
-              <input type="text" required autocomplete="off" />
+              <input type="text" required id="userName" class="signUpField" autocomplete="off" />
             </div>
         
             <div class="field-wrap">
               <label>
-                Last Name<span class="req">*</span>
+                Contact No<span class="req">*</span>
               </label>
-              <input type="text"required autocomplete="off"/>
+              <input type="text"required id="contact" class="signUpField" autocomplete="off"/>
             </div>
           </div>
 
@@ -80,22 +80,22 @@
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="email"required id="emailId" class="signUpField" autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Set A Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password"required id="password1" class="signUpField" autocomplete="off"/>
           </div>
           <div class="field-wrap">
             <label>
               Confirm Password<span  class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password"required id="password2" class="signUpField" autocomplete="off"/>
           </div>          
-          <button type="submit" class="button button-block"/>Get Started</button>
+          <button type="submit" class="button button-block" id="signUpButton" />Get Started</button>
           
           </form>
 
@@ -104,9 +104,10 @@
       </div><!-- tab-content -->
       
 </div> <!-- /form -->
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-    <script src="js/index.js"></script>
+    <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+    <script src="js/jquery.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/login.js"></script>
 
 </body>
 </html>

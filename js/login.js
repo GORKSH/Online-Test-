@@ -114,6 +114,11 @@ $(document).ready(function(){
 		
 
 	});
+	$("#setPaperButton").click(function(){
+		window.location="paperSet1.php";
+
+	});
+
 
 
 

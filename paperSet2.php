@@ -5,7 +5,6 @@ if (!isset($_SESSION['userName']))
 if(isset($_POST['noOfQuestion']))
 {
 $_SESSION['noOfQuestion']=  $_POST['noOfQuestion'];
-echo $_SESSION['noOfQuestion'];
 }
 
 ?>
@@ -43,9 +42,12 @@ echo $_SESSION['noOfQuestion'];
     ?>
     </ol>
     </div>
+    <button  id="createPaper" />Create Test Paper</button> 
     <script src='js/jquery.js'></script>
     <script src='js/login.js'></script>
     <script src='js/questionContain.js'></script>
+    <script src='js/script.js'></script>
+    <script src='js/jquery.generateFile.js'></script>
 
 </body>
 </html>

@@ -6,7 +6,6 @@ $(document).ready(function(){
 		data:{noOfQuestion:noOfQuestion},
 		type:"POST",
 		success: function(result){
-			alert(result);
 		   }
 		});
 		if(noOfQuestion>0)

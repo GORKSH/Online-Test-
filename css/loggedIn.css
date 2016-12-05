@@ -137,7 +137,7 @@
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: white;
 }
-#nextPage
+#nextPage , #createPaper
 {
   width:15vw;
   margin-top:-5vh;
@@ -150,7 +150,7 @@
   border-radius:20%;
 
 }
-#nextPage:hover
+#nextPage:hover ,#createPaper:hover
 {
 	background: #179b77;
 	
@@ -183,9 +183,10 @@
 .question , .answer
 {
 	width:14vw;
-	height:1vw;
+	height:2vw;
 	margin:1.5vw;
-	padding:-100vw;
+	padding:1vw;
+
 }
 .scroll::-webkit-scrollbar-track {
 background-color: #a3c2c2;
@@ -202,4 +203,22 @@ margin:0;
 background-color:rgba(19, 35, 47, 0.3) ;
 border-radius:1vw;
 margin:0;
+}
+#createPaper
+{
+  width:25vw;
+  margin-top:3vh;
+  margin-left:37.5vw;
+  font-size:2.5vw;
+  outline:none;
+  border:none;
+  background: #1ab188;  
+  color:white;
+  border-radius:20%;
+
+}
+#createPaper:hover
+{
+	background: #179b77;
+	
 }

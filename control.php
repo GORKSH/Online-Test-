@@ -27,4 +27,24 @@ else if($functionName=="signUp")
     {
       echo $user->logout(); 
 	}
+else if($functionName=="createTable")
+	{
+	  $noOfQuestion=$_POST["noOfQuestion"];
+	  $nameOfTest=$_POST["nameOfTest"];
+	  $nameOfSubject=$_POST["nameOfSubject"];
+	  echo $user->createTable($noOfQuestion,$nameOfTest,$nameOfSubject);
+	}
+else if($functionName=="destroyTable")
+	{
+
+	  $tableName=$_SESSION['nameOfTest'];
+	  echo $user->destroyTable($tableName);
+	}
+else if($functionName=="createPaper")
+	{
+	  $tableName=$_SESSION['nameOfTest'];
+	  $queryString1=$_POST['queryString1'];
+	  $queryString2=$_POST['queryString2'];
+	  echo $user->createPaper($queryString1,$queryString2,$tableName);
+	}	
 ?>

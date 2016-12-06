@@ -4,6 +4,8 @@ if (!isset($_SESSION['userName']))
 	header('location:index.php');
 if(isset($_POST['noOfQuestion']))
 {
+$_SESSION['nameOfTest']=  $_POST['nameOfTest'];
+$_SESSION['nameOfSubject']=  $_POST['nameOfSubject'];
 $_SESSION['noOfQuestion']=  $_POST['noOfQuestion'];
 }
 
@@ -32,22 +34,25 @@ $_SESSION['noOfQuestion']=  $_POST['noOfQuestion'];
       <img src='image/logout.png' id='logoutButton' />
     </div> 
     <div id='questionContainer' class='scroll'>Begin to set questions
-    <ol id='questionContainerList'>
+   
     <?php
     for($i=0;$i<$_SESSION['noOfQuestion'];$i++)
     {
       $qId=$i+1 ; $x=4*$i+1 ; $y=4*$i+2 ;$z=4*$i+3 ;$w=4*$i+4;
-      echo "<li><div class='problem-container' ><input type='text' class='question' placeholder='question' id=question".$qId." /><input type='text' class='answer' placeholder='correct answer' id=answer".$x." /><input type='text' class='answer'  placeholder='incorrect answer' id=answer".$y." /><input type='text' class='answer'  placeholder='incorrect answer' id=answer".$z."/><input type='text' class='answer'  placeholder='incorrect answer' id=answer".$w." /></div></li>";
+      echo "<div class='problem-container' ><div class='questionDiv'><div>".$qId."</div><textarea class='question' placeholder='Enter Question Here' id=question".$qId."></textarea></div><br /><div class='answerDiv'><input type='text' class='answer answer1' placeholder='correct answer' id=answer".$x." /><input type='text' class='answer answer2'  placeholder='incorrect answer' id=answer".$y." /><input type='text' class='answer answer3'  placeholder='incorrect answer' id=answer".$z."/><input type='text' class='answer answer4'  placeholder='incorrect answer' id=answer".$w." /></div></div><hr />";
     }
     ?>
-    </ol>
+
     </div>
-    <button  id="createPaper" />Create Test Paper</button> 
+    <div id="createDeleteDiv">
+      <button  id="createPaper" class="createDelete" />Create</button> 
+      <button  id="deletePaper" class="createDelete" />Back</button> 
+    </div>
     <script src='js/jquery.js'></script>
     <script src='js/login.js'></script>
     <script src='js/questionContain.js'></script>
-    <script src='js/script.js'></script>
-    <script src='js/jquery.generateFile.js'></script>
+    <!-- <script src='js/script.js'></script> -->
+    <!-- <script src='js/jquery.generateFile.js'></script> -->
 
 </body>
 </html>

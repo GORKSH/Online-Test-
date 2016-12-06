@@ -57,6 +57,62 @@ class User {
         session_destroy();
         return "loggedOut";
       }  
+
+      public function createTable($noOfQuestion,$nameOfTest,$nameOfSubject)
+      {
+        $table = $nameOfTest;
+        try 
+        {
+             $sql ="CREATE table $table(
+             question VARCHAR( 250 ) NOT NULL, 
+             answer1 VARCHAR( 150 ) NOT NULL,
+             answer2 VARCHAR( 150 ) NOT NULL, 
+             answer3 VARCHAR( 150 ) NOT NULL, 
+             answer4 VARCHAR( 150 ) NOT NULL, 
+             correctAnswer VARCHAR( 100 ) NOT NULL);" ;
+             $this->db->exec($sql);
+        } 
+        catch(PDOException $e) 
+        {
+            echo $e->getMessage();//Remove or change message in production code
+        }
+      }
+      public function destroyTable($tableName)
+      {
+        try 
+        {
+            $sql= $this->db->prepare("DROP TABLE  $tableName ");
+            $sql->execute();
+        } 
+        catch(PDOException $e) 
+        {
+            echo $e->getMessage();//Remove or change message in production code
+        }
+      }    
+      public function createPaper($queryString1,$queryString2,$tableName)
+      {
+            $questionArray= explode("&",$queryString1 );
+            $answerArray = explode("&", $queryString2);
+            $noOfQuestion=count($questionArray);
+            for($i=0;$i<$noOfQuestion;$i++)
+            {
+              $question=$questionArray[$i];
+              $answer1=$answerArray[$i*4];
+              $answer2=$answerArray[$i*4+1];
+              $answer3=$answerArray[$i*4+2];
+              $answer4=$answerArray[$i*4+3];
+
+              try
+              {
+              $stmt = "INSERT INTO $tableName (question,answer1,answer2,answer3,answer4,correctAnswer) VALUES ('$question', '$answer1', '$answer2','$answer3' ,'$answer4','$answer1')";
+              $this->db->exec($stmt);
+              }
+              catch(PDOException $e)
+              {
+                echo "Error: " . $e->getMessage();
+              }
+            }
+      }        
 }
 
       
